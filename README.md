@@ -1,8 +1,5 @@
-<p align="center">
-    <a href="https://github.com/aarsla/tk-bot" target="_blank">
-        <img src="https://raw.githubusercontent.com/aarsla/tk-bot/main/logo/tk-bot-logo.png" width="400">        
-    </a>
-</p>
+![logo](./logo/dark-logo.png#gh-dark-mode-only)
+![logo](./logo/light-logo.png#gh-light-mode-only)
 
 <p align="center">
     <img src="https://img.shields.io/github/v/release/aarsla/tk-bot?color=red&style=for-the-badge" alt="release">
@@ -10,7 +7,7 @@
 </p>
 
 # About tk-bot
-tk-bot is discord bot you can use to report a teamkill to. Based on a [package-skeleton-discordjs](https://github.com/JakyeRU/package-skeleton-discordjs) template.
+tk-bot is discord bot you can use to report a team kill to. Based on a [package-skeleton-discordjs](https://github.com/JakyeRU/package-skeleton-discordjs) template.
 
 # Commands
 - `/ahoy` - Politely say hello;
