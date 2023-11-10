@@ -19,7 +19,6 @@ module.exports = {
         let timeDistance = formatDistance(lastTkDate, new Date(), { addSuffix: true });
 
         await interaction.reply({
-            ephemeral: true,
             content: `The last team kill was reported ${timeDistance}.`
         });
     }

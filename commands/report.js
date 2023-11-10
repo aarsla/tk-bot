@@ -29,7 +29,6 @@ module.exports = {
         });
 
         await interaction.reply({
-            ephemeral: true,
             content: `Let it be known that ${killer} killed ${victim} on ${formattedDate} at ${formattedTime} o'clock! Dead men tell no tales.`
         });
     }

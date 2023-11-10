@@ -19,7 +19,6 @@ module.exports = {
         let formattedTime = format(tk.date, 'h');
 
         await interaction.reply({
-            ephemeral: true,
             content: `${tk.victim_name} was brutally murdered by ${tk.killer_name} on ${formattedDate} at ${formattedTime} o'clock. RIP my fair friend.`
         });
     }
