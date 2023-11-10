@@ -1,0 +1,36 @@
+{
+  "name": "teamkill-bot",
+  "version": "1.0.0",
+  "description": "A discord.js project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:bot": "node bot.js",
+    "deploy": "node deploy-commands.js",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aarsla/tk-bot.git"
+  },
+  "author": "aarsla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aarsla/tk-bot/issues"
+  },
+  "homepage": "https://github.com/aarsla/tk-bot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^1.6.5",
+    "@discordjs/rest": "^2.0.1",
+    "date-fns": "^2.30.0",
+    "discord-api-types": "^0.37.63",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "prompt-sync": "^4.2.0",
+    "sequelize": "^6.34.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
