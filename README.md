@@ -14,9 +14,9 @@ tk-bot is discord bot you can use to report a teamkill to. Based on a [package-s
 
 # Commands
 - `/ahoy` - Politely say hello;
-- `/latest` - Show the last reported team kill;
+- `/last` - Show the last reported team kill;
 - `/report` - Report a new team kill;
-- `/since` - Show the time since tha last reported team kill;
+- `/ago` - Show the time since tha last reported team kill;
 - ... to be expanded?
 
 # Installation
