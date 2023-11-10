@@ -4,13 +4,13 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const configuration = require('./configuration.json');
-const prompt = require('prompt-sync')();
+// const prompt = require('prompt-sync')();
 require('dotenv').config();
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-let globalDeploy = false;
+let globalDeploy = true;
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
@@ -23,7 +23,7 @@ if (!configuration.DISCORD_CLIENT_ID) {
     process.exit(1);
 }
 
-if (prompt('Do you want to deploy the commands globally? If yes, type "YES", otherwise don\'t type anything: ').toLowerCase() === 'yes') globalDeploy = true;
+// if (prompt('Do you want to deploy the commands globally? If yes, type "YES", otherwise don\'t type anything: ').toLowerCase() === 'yes') globalDeploy = true;
 
 if (!globalDeploy) {
     if (!configuration.DISCORD_TESTING_GUILD_ID) {

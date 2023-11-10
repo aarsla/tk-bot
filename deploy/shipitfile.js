@@ -41,6 +41,7 @@ module.exports = shipit => {
       await shipit.remote(`cd ${releaseDir} && cp /srv/bot/env/.env ./.env`)
     }
 
-    await shipit.remote(`cd ${releaseDir} && yarn install --ignore-engines`)
+    await shipit.remote(`cd ${releaseDir} && yarn install`)
+    await shipit.remote(`cd ${releaseDir} && yarn deploy`)
   })
 }

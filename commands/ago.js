@@ -4,8 +4,8 @@ const { Event } = require('../db/sequelize')
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('latest')
-        .setDescription('Show the time since tha last reported team kill')
+        .setName('ago')
+        .setDescription('Show the time since the last reported team kill')
     ,
 
     async execute(interaction) {

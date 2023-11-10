@@ -1,6 +1,7 @@
-const { Client, CommandInteraction } = require("discord.js");
+const { Client, CommandInteraction, Collection} = require("discord.js");
 const Embed = require('../helpers/embed');
 const embed = new Embed();
+
 /**
  * Listens for the interactionCreate event and tries to respond to the interaction.
  * @type {{once: boolean, name: string, execute(*, *)}}
@@ -16,6 +17,26 @@ module.exports = {
     execute(interaction, client) {
         // Making sure the interaction is a command interaction.
         if (!interaction.isCommand()) return false;
+
+        const { cooldowns } = client;
+
+        if (!cooldowns.has(command.data.name)) {
+            cooldowns.set(command.data.name, new Collection());
+        }
+
+        const now = Date.now();
+        const timestamps = cooldowns.get(command.data.name);
+        const defaultCooldownDuration = 3;
+        const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
+
+        if (timestamps.has(interaction.user.id)) {
+            const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
+
+            if (now < expirationTime) {
+                const expiredTimestamp = Math.round(expirationTime / 1000);
+                return interaction.reply({ content: `Please wait, you are on a cooldown for \`${command.data.name}\`. You can use it again <t:${expiredTimestamp}:R>.`, ephemeral: true });
+            }
+        }
 
         // Making sure the command is bound to a file.
         if (!client.commands.has(interaction.commandName)) {

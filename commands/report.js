@@ -3,6 +3,7 @@ const {format} = require("date-fns");
 const { Event } = require('../db/sequelize')
 
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('report')
         .setDescription('Report a new team kill')
