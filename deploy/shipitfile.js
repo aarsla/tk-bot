@@ -42,6 +42,7 @@ module.exports = shipit => {
     }
 
     await shipit.remote(`cd ${releaseDir} && yarn install`)
+    await shipit.remote(`cd ${releaseDir} && yarn sequelize-cli db:migrate`)
     await shipit.remote(`cd ${releaseDir} && yarn deploy`)
   })
 }
